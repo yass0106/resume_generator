@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <select name="choose" id="choose">
+                    <option value=""   >Select which language you need to change  </option> 
+                    <option value="Hindi"   >Hindi  </option> 
+                    <option value="Marathi" >Marathi</option> 
+                    <option value="German"  >German </option> 
+                </select><button class="btn btn-primary "  onclick="translateee()">Submit</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                Enter Text : <br><textarea name="text" id="text" cols="50" rows="10"></textarea>
+            </div>
+            <div class="col-md-6">
+                Translation: <br><div  id="result"  style="width: 450px; height: 250px; border: solid rgba(0, 0, 0, 0.603) 1px;"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6"><button class="btn btn-danger " onclick="clear()" >Clear</button></div>
+           
+        </div>
+    </div>
+    <script>
+        function translateee(){
+           var text = $("#text").val();
+           console.log(text);
+           if(text == ""){
+               alert("Please enter the text");
+           }else{
+             var choose=$("#choose").val();
+             $.ajax({
+                url: '/translate/',
+                type: 'POST',
+                data:{
+                    'text':text,
+                    'language':choose, csrfmiddlewaretoken: '{{ csrf_token }}',
+                },
+                success:function(data){
+                    console.log(data+"-------");
+                     document.getElementById('result').innerText=data;
+                }
+             })
+           }
+        }
+    </script>
+</body>
+</html>

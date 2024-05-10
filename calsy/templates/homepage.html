@@ -1,0 +1,379 @@
+{% extends 'index.html' %}
+{% block  content %}
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<style>
+input,textarea{
+    width: 95%;
+    margin:10px 10px 20px 10px;
+    border: solid rgba(248, 74, 30, 0.897) 1px;
+    padding: 10px 10px 10px 15px;
+    border-radius: 20px;
+    background-color: #f8efed93;
+    }
+    /* label{
+        font-size: larger;
+        font-weight: bolder;
+    } */
+    h3{
+        text-transform:uppercase;
+        padding: 5px 0px;
+        border-bottom: dashed rgb(250, 204, 204) 1px;
+        margin: 15px 0px ;
+    }
+    .imagediv{
+        width:  180px;
+        height: 185px;
+        /* border-radius: 100%; */
+        /* background-color: black; */
+        text-align: center;
+        margin:20px 20px 20px 87px;
+       
+    }
+    /* .row{
+        margin: 0px;
+    } */
+    .namediv{
+        /* text-align: center; */
+        margin:60px 10px 20px 0px;
+    }
+    /* .container2{
+        /* background-color: rgba(240, 248, 255, 0.534); */
+        /* margin-top: 50px;}  */
+    
+    .align{
+        margin:20px 20px 20px 20px;
+    }
+    .bagc{
+        /* background-color: rgba(240, 248, 255, 0.548); */
+        width: max-content;
+    }
+    h4{
+        margin-bottom: 10px;
+    }
+</style>
+<br>    
+    <p>C R E A T E ___D E T A I L S___ F O R ___ R E S U M E</p> <hr>
+
+	<div class="col-md-12" style=" overflow-x: hidden;
+            overflow-y: auto;  height:75vh;">
+	<div class="container" >
+        <div style="width: fit-content;">
+            <h3> Personal Information :</h3>
+            
+        </div>                            
+        <div class="row">   
+            <div class="col-md-6">
+                <label for="name">Name:</label> 
+                <input type="text" id="name" name="name"  >
+            </div>
+            <!-- <div class="col-md-6">
+                <label for="dob">Date of Birth:</label> 
+                <input type="date" id="dob" name="dob">
+            </div> -->
+            <div class="col-md-6">
+                <label for="linkedin">Linked in:</label> 
+                <input type="text" id="linkedin" name="linkedin" >
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="email">Email:</label> 
+                <input type="email" id="email" name="email" >
+            </div>
+            
+            <div class="col-md-6">
+                <label for="address">Address:</label> 
+                <input type="text" id="address" name="address" >
+            </div>
+        </div>
+        <div class="row">
+             
+            <div class="col-md-6">
+                <label for="pno">Phone No:</label> 
+                <input type="text" id="pno" name="pno" >
+            </div>
+            <div class="col-md-6">
+                <label for="about">About:</label> 
+                <!-- <input type="text" id="about" name="about" maxlength="380"> -->
+                <textarea name="about" id="about" cols="30" rows="7" maxlength="420"></textarea>
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-6">
+                <label for="linkedin">Linked in:</label> 
+                <input type="text" id="linkedin" name="linkedin">
+            </div>
+        </div> -->
+        
+        <div class="row">
+            <div class="col-md-6">
+                <label for="language">Language  Known :</label><br/>
+                <ol style="display: flex;">
+                    <div class="col-md-5"><li style="margin-right: 25px;"><input type="text" id="languageone" name="language" ></li></div>
+                    <div class="col-md-5"><li style="margin-right: 25px;"><input type="text" id="language2" name="language" ></li></div>
+                    <div class="col-md-5"><li style="margin-right: 25px;"><input type="text" id="language3" name="language" ></li></div>
+                </ol>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="Interest">Area of Interest :</label><br/>
+                <ol style="display: flex;">
+                    <div class="col-md-6"><li style="margin-right: 25px;"><input type="text" id="Interest1" name="Interest1" ></li></div>
+                    <div class="col-md-6"><li style="margin-right: 25px;"><input type="text" id="Interest2" name="Interest2" ></li></div>
+                    <div class="col-md-6"><li style="margin-right: 25px;"><input type="text" id="Interest3" name="Interest3" ></li></div>
+                    <div class="col-md-6"><li style="margin-right: 25px;"><input type="text" id="Interest4" name="Interest4" ></li></div>
+
+                </ol>
+            </div> 
+        </div>
+		<div class="row">
+            <div class="col-md-6">
+                <label for="skill">Skills:</label>
+                <ol style="display: flex;">
+                    <div class="col-md-5"><li style="margin-right: 25px;"><input type="text" id="skillone" name="skill" ></li></div>
+                    <div class="col-md-5"><li style="margin-right: 25px;"><input type="text" id="skill2" name="skill" ></li></div>
+                    <div class="col-md-5"><li style="margin-right: 25px;"><input type="text" id="skill3" name="skill" ></li></div>
+                    <div class="col-md-5"><li style="margin-right: 25px;"><input type="text" id="skill4" name="skill" ></li></div>
+                    <div class="col-md-5"><li style="margin-right: 25px;"><input type="text" id="skill5" name="skill" ></li></div>
+                </ol>
+            </div>
+        </div>
+        <div style="width: fit-content;">
+                <h3> Education Details :</h3>
+                
+            </div>
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <label for="sslc">SSLC School Name :</label>
+                    <input type="text"  id="sslc" name="sslc" >
+
+                    <label for="sslcm">SSLC Mark :</label>
+                    <input type="text"  id="sslcm" name="sslcm" >
+
+                    <label for="sslcyear">Year of Passed  Out :</label>
+                    <input type="text"  id="sslcyear" name="sslcyear"placeholder="Eg: 20XX" >
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <label for="HSC">HSC School Name :</label>
+                    <input type="text"  id="HSC" name="HSC" >
+
+                    <label for="hscm">HSC Mark :</label>
+                    <input type="text"  id="hscm" name="hscm" >
+
+                    <label for="hscyear">Year of Passed  Out :</label>
+                    <input type="text"  id="hscyear" name="hscyear"placeholder="Eg: 20XX" >
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <label for="degree">Degree/Department :</label>
+                    <input type="text"  id="degree" name="degree"  >
+
+                    <label for="college">College :</label>
+                    <input type="text"  id="college" name="college" >
+
+                    <label for="cgpa">CGPA :</label>
+                    <input type="text"  id="cgpa" name="cgpa" >
+
+                    <label for="year">Year of Passed  Out :</label>
+                    <input type="text"  id="year" name="year"placeholder="Eg: 20XX-XX" >
+                </div>
+            </div>
+        </div>
+        <div style="width: fit-content;">
+            <h3> Project Details :</h3>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <label for="ptojectTitleone">Project Title :</label>
+                    <input type="text"  id="ptojectTitleone" name="ptojectTitleone" >
+
+                    <!-- <label for="durationone">Duration :</label>
+                    <input type="text"  id="durationone" name="durationone"/> -->
+
+                    <label for="descriptionone">Description :</label>
+                    <!-- <input type="text"  id="descriptionone" name="descriptionone" maxlength="420"> -->
+                    <textarea name="descriptionone" id="descriptionone" cols="30" rows="7" maxlength="420"></textarea>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <label for="ptojectTitle2">Project Title :</label>
+                    <input type="text"  id="ptojectTitle2" name="ptojectTitle2" >
+
+                    <!-- <label for="duration2">Duration :</label>
+                    <input type="text"  id="duration2" name="duration2"/> -->
+
+                    <label for="description2">Description :</label>
+                    <!-- <input type="text"  id="description2" name="description2" maxlength="420"> -->
+                    <textarea name="description2" id="description2" cols="30" rows="7" maxlength="420"></textarea>
+                </div>
+            </div>
+        </div>
+        <div style="width: fit-content;">
+            <h3> Achievement :</h3>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ol>
+                    <li><div class="row">
+                        <div class="col-md">
+                            <label for="achievementTypeone">Achievement 1 :</label>
+                            <input type="text" id="achievementTypeone" name="achievementTypeone" maxlength="175">
+                        </div>
+                    </div></li>
+                    <li><div class="row">
+                        <div class="col-md">
+                            <label for="achievementType2">Achievement 2 :</label>
+                            <input type="text" id="achievementType2" name="achievementType2" maxlength="175">
+                        </div>
+                    </div></li>
+                    <li><div class="row">
+                        <div class="col-md">
+                            <label for="achievementType3">Achievement 3 :</label>
+                            <input type="text" id="achievementType3" name="achievementType3" maxlength="175">
+                        </div>
+                    </div></li>
+                </ol>
+            </div>
+        </div> 
+       
+    </div>
+   
+    </div>  <div class="row" style="margin: 10px 32%;">
+            <button style="color: #000000; background-color: rgba(236, 81, 54, 0.658);" type="button" onclick="ssubmit()" class="btn">Submit</button>
+        </div>   
+        <script>
+            function ssubmit(){
+        
+                var name=document.getElementById('name').value;
+                var about=document.getElementById('about').value;
+                console.log("about me:"+about);
+                var email=document.getElementById('email').value;
+                var pno=document.getElementById('pno').value;
+                var skillone=document.getElementById('skillone').value;
+                var address=document.getElementById('address').value; 
+                var linkedin=document.getElementById('linkedin').value;
+                var skill2=document.getElementById('skill2').value;
+                var skill3=document.getElementById('skill3').value;
+                var skill4=document.getElementById('skill4').value;
+                var skill5=document.getElementById('skill5').value;
+                var languageone=document.getElementById('languageone').value;
+                var language2=document.getElementById('language2').value;
+                var language3=document.getElementById('language3').value; 
+                var sslc=document.getElementById('sslc').value;
+                var sslcm=document.getElementById('sslcm').value;
+                var sslcyear=document.getElementById('sslcyear').value;
+                var HSC=document.getElementById('HSC').value;
+                var hscm=document.getElementById('hscm').value;
+                console.log(address);
+                var Interest1=document.getElementById('Interest1').value;        
+                var Interest2=document.getElementById('Interest2').value;
+                var Interest3=document.getElementById('Interest3').value;
+                var Interest4=document.getElementById('Interest4').value;        
+                var hscyear=document.getElementById('hscyear').value;
+                var degree=document.getElementById('degree').value;
+                var college=document.getElementById('college').value;
+                var year=document.getElementById('year').value;
+                var cgpa=document.getElementById('cgpa').value;
+                var ptojectTitleone=document.getElementById('ptojectTitleone').value;
+                console.log(ptojectTitleone);
+                // var durationone=document.getElementById('durationone').value;
+                var descriptionone=document.getElementById('descriptionone').value;
+                var ptojectTitle2=document.getElementById('ptojectTitle2').value;
+                // var duration2=document.getElementById('duration2').value;
+                var description2=document.getElementById('description2').value;
+                var achievementTypeone=document.getElementById('achievementTypeone').value;
+                var achievementType2=document.getElementById('achievementType2').value;
+                var achievementType3=document.getElementById('achievementType3').value;
+                
+                if(name!='' && about!='' &&  pno!='' && linkedin!=''&& skillone!='' && skill2!='' && 
+                skill3!='' && skill4!='' && skill5!=''&& languageone!='' && language2!='' && language3!='' && Interest1!='' && Interest2!=''
+                && Interest3!='' && Interest4!='' && sslc!='' && sslcyear!='' && sslcm!=''
+                && HSC!='' && hscyear!='' && hscm!='' && degree!='' && college!=''
+                && cgpa!='' && year!='' && ptojectTitleone!='' && descriptionone!='' && ptojectTitle2!=''
+                && description2!='' && achievementTypeone!='' && achievementType2!='' && achievementType3!=''){
+                //    alert('if'); alert(about);
+
+                
+                $.ajax({
+                    url: '/form/',
+                    type: 'POST',
+                    data:{
+                        "name":name,
+                
+                        
+                        "AboutMe" : about ,
+                        "EmailId" : email ,
+                        "PhoneNo" : pno ,
+                        "address":address,
+                            "linkedin":linkedin,
+                        'Skillsone':skillone,
+                        'Skills2':skill2,
+                        'Skills3':skill3,
+                        'Skills4':skill4,
+                        'Skills5':skill5,
+                        "LanguagesKnownone" :languageone,
+                        "LanguagesKnown2" :language2,
+                        "LanguagesKnown3" :language3, 
+                            "Interest1":Interest1,
+                            "Interest2":Interest2,
+                            "Interest3":Interest3,
+                            "Interest4":Interest4,
+                        "sslc":sslc,
+                        "sslcyear" : sslcyear ,
+                        "sslcm" : sslcm,
+                        "hsc":HSC,
+                        "hscyear" : hscyear ,
+                        "hscm" : hscm,
+                        "Degree" : degree , 
+                        "CollegeName" : college , 
+                        "cgpa":cgpa,
+                        "year":year,
+                        "ProjectTitleone" : ptojectTitleone ,  
+                        // "Durationone" : durationone ,  
+                        "Descriptionone" : descriptionone ,
+                        "ProjectTitle2" : ptojectTitle2 ,    
+                        // "Duration2" : duration2 ,      
+                        "Description2" : description2 ,      
+                        "AchievementTypeone":achievementTypeone,
+                        "AchievementType2":achievementType2,
+                        "AchievementType3":achievementType3,
+                        
+                        csrfmiddlewaretoken: '{{ csrf_token }}',
+                    },
+                    success: function(data) {
+                       
+                        Swal.fire({
+                        title: "Good job!",
+                        text: "Profile Created Successfully",
+                        icon: "success"
+}); 
+                        //   swal("","Profile Created Successfully","success")
+                      console.log(dataa.name);
+                    }
+                });
+            }
+            else{
+                // alert(about);alert('else');
+                // alert('Please fill all the fields');
+                Swal.fire({
+                title: "Please fill all the field!",
+                text: "",
+                icon: "warning"
+                }); 
+
+        }
+        
+
+        }
+        </script>
+{% endblock %}

@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Entry Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<style>
+    input{
+    width: 95%;
+    margin:10px 10px 20px 10px;
+    border: solid rgb(255, 255, 255) 1px;
+    padding: 5px 5px 5px 30px;
+    border-radius: 20px;
+    }
+    label{
+        font-size: larger;
+        font-weight: bolder;
+    }
+    h3{
+        font-size: 30px;;
+        font-weight: bolder;
+        padding: 5px 0px;
+        border-bottom: dashed rgb(224, 240, 248) 1px;
+        margin: 15px 0px ;
+    }
+    button{
+        margin: 55px 0px;
+        font-weight: bolder;
+        background-color: rgb(255, 255, 255);
+        color: #1a2c52;
+        border: none;
+        cursor: pointer;
+        font-size: large;
+        padding: 10px 20px;
+        border-radius: 20px;
+    }
+    .container{
+        margin-top: 30px;
+    }
+    .imagediv{
+        width:  180px;
+        height: 185px;
+        /* border-radius: 100%; */
+        /* background-color: black; */
+        text-align: center;
+        margin:20px 20px 20px 87px;
+       
+    }
+    .row{
+        margin: 0px;
+    }
+    .namediv{
+        /* text-align: center; */
+        margin:60px 10px 20px 0px;
+    }
+    /* .container2{
+        /* background-color: rgba(240, 248, 255, 0.534); */
+        /* margin-top: 50px;}  */
+    
+    .align{
+        margin:20px 20px 20px 20px;
+    }
+    .bagc{
+        /* background-color: rgba(240, 248, 255, 0.548); */
+        width: max-content;
+    }
+    h4{
+        margin-bottom: 10px;
+    }
+    /* @keyframes backgroundAnimation{
+        0%{
+           background-color: black;
+        }
+    } */
+    body{
+        /* background-image: url(/media/360_F_227215665_8HbqJ2T9djgJU4mkLJJEmesp5XYhlUTk.jpg); */
+        /* background-image: url(/media/v882batch2-kul-13.jpg); */
+        /* background-image: url(/media/3782075_78199.jpg); */
+        /* background-size: cover; 
+        background-color: #9472bf; color: #ebecd2;
+        background-color: #935c48; color: #fec697;    background-color: #dfd4dc   #037bec,;
+    color: #8a4b58;*/
+    }
+</style>
+<body style="background-color: #1a2c52; color: #f8f8e9;  "> 
+    <div style="width: 70%; margin: 0px 200px ; ;" id="hid">
+    <div style="text-align:center; width: 100%;">
+        <br><br>
+            <h2  style="font-family: 'Times New Roman', 
+            Times, serif; 
+            font-weight:bolder;
+            background: linear-gradient(to right,
+                    #0e0a0a,
+                    #001d22,
+                    #bebdbd,
+                    #f7f7f7,
+                    #8b8b8b,
+                    #a0a0a0,
+                    #100014);
+            -webkit-background-clip: text;
+            color: transparent;">Generate Resume Template</h2>
+        </div>
+    <div class="container">
+        <div style="width: fit-content;">
+            <h3> Personal Information :</h3>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="name">Name:</label> 
+                <input type="text" id="name" name="name">
+            </div>
+            <!-- <div class="col-md-6">
+                <label for="dob">Date of Birth:</label> 
+                <input type="date" id="dob" name="dob">
+            </div> -->
+            <div class="col-md-6">
+                <label for="linkedin">Linked in:</label> 
+                <input type="text" id="linkedin" name="linkedin">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="about">About:</label> 
+                <input type="text" id="about" name="about">
+            </div>
+            <div class="col-md-6">
+                <label for="address">Address:</label> 
+                <input type="text" id="address" name="address">
+            </div>
+        </div>
+        <div class="row">
+             <div class="col-md-6">
+                <label for="email">Email:</label> 
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="col-md-6">
+                <label for="pno">Phone No:</label> 
+                <input type="text" id="pno" name="pno">
+            </div>
+        </div>
+        <!-- <div class="row">
+            <div class="col-md-6">
+                <label for="linkedin">Linked in:</label> 
+                <input type="text" id="linkedin" name="linkedin">
+            </div>
+        </div> -->
+        <div class="row">
+            <div class="col-md-6">
+                <label for="skill">Skills:</label>
+                <ol style="display: flex;">
+                    <div class="col-md-5"><li><input type="text" id="skillone" name="skill"></li></div>
+                    <div class="col-md-5"><li><input type="text" id="skill2" name="skill"></li></div>
+                    <div class="col-md-5"><li><input type="text" id="skill3" name="skill"></li></div>
+                    <div class="col-md-5"><li><input type="text" id="skill4" name="skill"></li></div>
+                    <div class="col-md-5"><li><input type="text" id="skill5" name="skill"></li></div>
+                </ol>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="language">Language  Known :</label><br/>
+                <ol style="display: flex;">
+                    <div class="col-md-9"><li><input type="text" id="languageone" name="language"></li></div>
+                    <div class="col-md-9"><li><input type="text" id="language2" name="language"></li></div>
+                    <div class="col-md-9"><li><input type="text" id="language3" name="language"></li></div>
+                </ol>
+            </div> 
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <label for="Interest">Area of Interest :</label><br/>
+                <ol style="display: flex;">
+                    <div class="col-md-7"><li><input type="text" id="Interest1" name="Interest1"></li></div>
+                    <div class="col-md-7"><li><input type="text" id="Interest2" name="Interest2"></li></div>
+                    <div class="col-md-7"><li><input type="text" id="Interest3" name="Interest3"></li></div>
+                    <div class="col-md-7"><li><input type="text" id="Interest4" name="Interest4"></li></div>
+
+                </ol>
+            </div> 
+        </div>
+        <div style="width: fit-content;">
+                <h3> Education Details :</h3>
+                
+            </div>
+        <div class="row">
+            
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <label for="sslc">SSLC School Name :</label>
+                    <input type="text"  id="sslc" name="sslc"/>
+
+                    <label for="sslcm">SSLC Mark :</label>
+                    <input type="text"  id="sslcm" name="sslcm"/>
+
+                    <label for="sslcyear">Year of Passed  Out :</label>
+                    <input type="text"  id="sslcyear" name="sslcyear"placeholder="Eg: 20XX">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <label for="HSC">HSC School Name :</label>
+                    <input type="text"  id="HSC" name="HSC"/>
+
+                    <label for="hscm">HSC Mark :</label>
+                    <input type="text"  id="hscm" name="hscm"/>
+
+                    <label for="hscyear">Year of Passed  Out :</label>
+                    <input type="text"  id="hscyear" name="hscyear"placeholder="Eg: 20XX">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="col-md-12">
+                    <label for="degree">Degree/Department :</label>
+                    <input type="text"  id="degree" name="degree" >
+
+                    <label for="college">College :</label>
+                    <input type="text"  id="college" name="college"/>
+
+                    <label for="cgpa">CGPA :</label>
+                    <input type="text"  id="cgpa" name="cgpa"/>
+
+                    <label for="year">Year of Passed  Out :</label>
+                    <input type="text"  id="year" name="year"placeholder="Eg: 20XX-XX">
+                </div>
+            </div>
+        </div>
+        <div style="width: fit-content;">
+            <h3> Project Details :</h3>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <label for="ptojectTitleone">Project Title :</label>
+                    <input type="text"  id="ptojectTitleone" name="ptojectTitleone"/>
+
+                    <!-- <label for="durationone">Duration :</label>
+                    <input type="text"  id="durationone" name="durationone"/> -->
+
+                    <label for="descriptionone">Description :</label>
+                    <input type="text"  id="descriptionone" name="descriptionone"/>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="col-md-12">
+                    <label for="ptojectTitle2">Project Title :</label>
+                    <input type="text"  id="ptojectTitle2" name="ptojectTitle2"/>
+
+                    <!-- <label for="duration2">Duration :</label>
+                    <input type="text"  id="duration2" name="duration2"/> -->
+
+                    <label for="description2">Description :</label>
+                    <input type="text"  id="description2" name="description2"/>
+                </div>
+            </div>
+        </div>
+        <div style="width: fit-content;">
+            <h3> Achievement :</h3>
+            
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <ol>
+                    <li><div class="row">
+                        <div class="col-md">
+                            <label for="achievementTypeone">Achievement 1 :</label>
+                            <input type="text" id="achievementTypeone" name="achievementTypeone"/>
+                        </div>
+                    </div></li>
+                    <li><div class="row">
+                        <div class="col-md">
+                            <label for="achievementType2">Achievement 2 :</label>
+                            <input type="text" id="achievementType2" name="achievementType2"/>
+                        </div>
+                    </div></li>
+                    <li><div class="row">
+                        <div class="col-md">
+                            <label for="achievementType3">Achievement 3 :</label>
+                            <input type="text" id="achievementType3" name="achievementType3"/>
+                        </div>
+                    </div></li>
+                </ol>
+            </div>
+        </div> 
+        <div class="row">
+            <button type="button" onclick="ssubmit()">Submit</button>
+        </div>   
+    </div>
+</div>
+<div style="width: 90%; margin: 50px ; display: none;" id="form11" >
+    <div class="container2">
+        <div class="row">
+            <div class="col-md-4" style="background-color: rgb(10, 30, 48); color: white; ">
+                <div class="imagediv">
+                    <img src="/media/pexels-mohamed-abdelghaffar-771742.jpg" height="180px" alt="Profile Image"/>
+                </div>
+            </div>
+            <div class="col-md-1" style="background-color: rgba(240, 248, 255, 0.295); color: rgb(10, 30, 48);"></div>
+            <div class="col-md-7" style="background-color: rgba(240, 248, 255, 0.295); color: rgb(10, 30, 48);">
+                <div class="namediv" >
+                <h1 id="resname">YOUR NAME</h1><br>
+                <h4 id="resdep">DEPARTMENT NAME</h4>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4" style="background-color: rgb(10,30,48); color: white; ">
+                <div class="contactDetail align" >
+                    <h4>Contact Details:</h4>
+                    <p>Email Address: <br><span id="resemail">111111111111</span></p>
+                    <p>Phone Number:  <br><span id="respone">111111111</span></p>
+                    <p>location:  <br><span id="resloc">Lorem ipsum dolor sit amet consectetur.</span></p>
+                    <p>linked in:  <br><span id="reslink">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</span></p>
+                </div>
+                <div class="skillsdiv align">
+                    <h4>Skills:</h4>
+                    <ul id="resskills">
+                        <li ><h6 id="resskillone">skills</h6></li>
+                        <li ><h6 id="resskill2">skills</h6></li>
+                        <li ><h6 id="resskill3">skills</h6></li>
+                        <li ><h6 id="resskill4">skills</h6></li>
+                        <li ><h6 id="resskill5">skills</h6></li>
+                    </ul>
+                </div>
+                <div class="languagediv align">
+                    <h4>Language(s):</h4>
+                    <ul id="reslang">
+                            <li ><h6 id="reslangone">LanguagesKnownone</h6></li>
+                            <li ><h6 id="reslang2">LanguagesKnown2</h6></li>
+                            <li ><h6 id="reslang3">LanguagesKnown3</h6></li>
+                    </ul>
+                </div>
+                <div class="areaofintrest align">
+                    <h4>Area of Interest:</h4>
+                    <ul>
+                        <li ><h6 id="areaofinone">area of intrest</h6></li>
+                        <li ><h6 id="areaofin2">area of intrest</h6></li>
+                        <li ><h6 id="areaofin3">area of intrest</h6></li>
+                        <li ><h6 id="areaofin4">area of intrest</h6></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-1" style="background-color: rgba(240, 248, 255, 0.295);"></div>
+            <div class="col-md-7" style="background-color: rgba(240, 248, 255, 0.295); color: rgb(10, 30, 48);">
+                <div id="resabout" >
+                    <h4>About Me:</h4>
+                    <h6 id="resabt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam officia, iste nulla expedita voluptate delectus eos iusto facilis dolorum explicabo suscipit quaerat illum eius eum possimus libero? Quas optio quibusdam officiis dolore dolorem nam ab itaque obcaecati cum odit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, maxime.</h6>
+                </div><br>
+                <div class="resedu">
+                    <h4>Education Details:</h4><br>
+                    <h5 id="resdepp">college/department</h5>
+                    <h5 id="rescollege">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, ut!</h5>
+                    <h6 id="rescyear">Lorem ipsum dolor sit amet </h6><p style="font-weight: bold;" id="rescgpa"><span>|</span>52.36</p>
+                    <!-- <br> -->
+                    <h5>HSC </h5>
+                    <h5 id="reshsc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, ut!</h5>
+                    <h6 id="reshscyear">Lorem ipsum dolor sit amet </h6><p style="font-weight: bold;"id="twothmart">| 788</p>
+                    <!-- <br> -->
+                    <h5>SSLC </h5>
+                    <h5 id="ressslc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, ut!</h5>
+                    <h6 id="ressslcyear">Lorem ipsum dolor sit amet </h6><p style="font-weight: bold;"id="10thmark">| 456</p>
+                </div><br>
+                <div class="resproject" >
+                    <h4>Project Title:</h4><br>
+                    <h6 style="font-weight: bold;"id="resprotitleone">Project Title Here</h5>
+                    <h6 id="prodescone">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius tempora culpa minus ea veniam in ab nostrum vel impedit. Explicabo magnam eius voluptate accusamus qui blanditiis nemo natus non sint?</h6>
+                    <h6 style="font-weight: bold;" id="resprotitle2">Project Title Here</h5>
+                    <h6 id="prodesc2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius tempora culpa minus ea veniam in ab nostrum vel impedit. Explicabo magnam eius voluptate accusamus qui blanditiis nemo natus non sint?</h6>
+                </div><br>
+                <div class="resachiv" style="padding-bottom: 50px;">
+                    <h4>Achievements:</h4>
+                    <br>
+                    <h6 id="resachione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illum molestias asperiores.</h6>
+                    <h6 id="resachi2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illum molestias asperiores.</h6>
+                    <h6 id="resachi3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illum molestias asperiores.</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<button id="pribtn" onclick="printt()" style="display: none;">nnnn</button>
+</body>
+<script >
+    function printt(){
+        document.getElementById('form11').style.display="block";
+        document.getElementById('pribtn').style.display='none';
+        document.getElementById('hid').style.display='none';
+        window.print();
+        document.getElementById('hid').style.display='block';
+        document.getElementById('form11').style.display="none";
+        document.body.style.backgroundColor = "#1a2c52";
+        document.body.style.color = "#F8F8E9"; 
+        // background-color: #9472bf; color: #ebecd2;
+    }
+    function ssubmit(){
+        // alert("hai")
+        document.body.style.backgroundImage = "none";
+        document.body.style.backgroundColor = "white"; 
+        document.getElementById('pribtn').style.display='block';
+        document.getElementById('form11').style.display="block";
+        document.getElementById('hid').style.display='none';
+        // console.log(document.getElementById("twothmart").innerText)var dob=document.getElementById('dob').value;
+        var name=document.getElementById('name').value;
+        var about=document.getElementById('about').value;var email=document.getElementById('email').value;
+        var pno=document.getElementById('pno').value;var skillone=document.getElementById('skillone').value;
+        var address=document.getElementById('address').value; var linkedin=document.getElementById('linkedin').value;
+        var skill2=document.getElementById('skill2').value;var skill3=document.getElementById('skill3').value;
+        var skill4=document.getElementById('skill4').value;var skill5=document.getElementById('skill5').value;
+        var languageone=document.getElementById('languageone').value;var language2=document.getElementById('language2').value;
+        var language3=document.getElementById('language3').value; var sslc=document.getElementById('sslc').value;
+        var sslcm=document.getElementById('sslcm').value;var sslcyear=document.getElementById('sslcyear').value;
+        var HSC=document.getElementById('HSC').value;var hscm=document.getElementById('hscm').value;
+        // console.log(address);
+    var Interest1=document.getElementById('Interest1').value;        
+        var Interest2=document.getElementById('Interest2').value;
+        var Interest3=document.getElementById('Interest3').value;
+    var Interest4=document.getElementById('Interest4').value;        
+        var hscyear=document.getElementById('hscyear').value;
+        var degree=document.getElementById('degree').value;var college=document.getElementById('college').value;
+        var year=document.getElementById('year').value;var cgpa=document.getElementById('cgpa').value;
+        var ptojectTitleone=document.getElementById('ptojectTitleone').value;console.log(ptojectTitleone);
+        // var durationone=document.getElementById('durationone').value;
+        var descriptionone=document.getElementById('descriptionone').value;
+        var ptojectTitle2=document.getElementById('ptojectTitle2').value;
+        // var duration2=document.getElementById('duration2').value;
+        var description2=document.getElementById('description2').value;var achievementTypeone=document.getElementById('achievementTypeone').value;
+        var achievementType2=document.getElementById('achievementType2').value;var achievementType3=document.getElementById('achievementType3').value;var year=document.getElementById('year').value;
+    //    -------------------------------------------------------------------------------- // 
+        document.getElementById('resname').innerText=name.toUpperCase();;// document.getElementById('resdep').innerText=dep;
+        document.getElementById('resemail').innerText=email;
+        document.getElementById("respone").innerText = pno;
+        document.getElementById("resloc").innerText = address; 
+        document.getElementById('reslink').innerText=linkedin;
+        document.getElementById("resskillone").innerText = skillone;document.getElementById('resskill2').innerText=  skill2;
+        document.getElementById("resskill3").innerText = skill3;document.getElementById('resskill4').innerText=  skill4;
+        document.getElementById("resskill5").innerText = skill5;document.getElementById('reslangone').innerText=  languageone;
+        document.getElementById("reslang2").innerText = language2;document.getElementById('reslang3').innerText=  language3;
+        document.getElementById("areaofinone").innerText = Interest1;
+        document.getElementById('areaofin2').innerText=    Interest2;
+        document.getElementById("areaofin3").innerText =   Interest3;
+        document.getElementById('areaofin4').innerText=    Interest4;document.getElementById('rescgpa').innerText=cgpa;
+        document.getElementById("resabt").innerText = about;document.getElementById('rescollege').innerText=college;document.getElementById('rescyear').innerText=year;
+        document.getElementById("resdep").innerText = degree.toUpperCase();
+        ;document.getElementById('reshscyear').innerText=hscyear;
+        document.getElementById('reshsc').innerText=HSC;
+        document.getElementById("twothmart").innerText=hscm;
+        // console.log(hscm);
+        document.getElementById('ressslc').innerText=sslc;
+        document.getElementById("ressslcyear").innerText = sslcyear;
+        document.getElementById('10thmark').innerText=sslcm;
+        document.getElementById('resprotitleone').innerText=ptojectTitleone.toUpperCase();;document.getElementById("prodescone").innerText =descriptionone;
+        document.getElementById('resprotitle2').innerText=ptojectTitle2.toUpperCase();;document.getElementById("prodesc2").innerText = description2;
+        document.getElementById("resachione").innerText = achievementTypeone;document.getElementById('resachi2').innerText=  achievementType2;
+        document.getElementById("resachi3").innerText = achievementType3;
+        // $.ajax({
+        //     url: '/rtemplate/',
+        //     type: 'POST',
+        //     data:{
+        //         "name":name,
+        
+        //         "DOB" : dob ,
+        //         "AboutMe" : about ,
+        //         "EmailId" : email ,
+        //         "PhoneNo" : pno ,
+        //         'Skillsone':skillone,
+        //         'Skills2':skill2,
+        //         'Skills3':skill3,
+        //         'Skills4':skill4,
+        //         'Skills5':skill5,
+        //         "LanguagesKnownone" :languageone,
+        //         "LanguagesKnown2" :language2,
+        //         "LanguagesKnown3" :language3, 
+        //         "sslc":sslc,
+        //         "sslcyear" : sslcyear ,
+        //         "sslcm" : sslcm,
+        //         "hsc":HSC,
+        //         "hscyear" : hscyear ,
+        //         "hscm" : hscm,
+        //         "Degree" : degree , 
+        //         "CollegeName" : college , 
+        //         "cgpa":cgpa,
+        //         "year":year,
+        //         "ProjectTitleone" : ptojectTitleone ,  
+        //         "Durationone" : durationone ,  
+        //         "Descriptionone" : descriptionone ,
+        //         "ProjectTitle2" : ptojectTitle2 ,    
+        //         "Duration2" : duration2 ,      
+        //         "Description2" : description2 ,      
+        //         "AchievementTypeone":achievementTypeone,
+        //         "AchievementType2":achievementType2,
+        //         "AchievementType3":achievementType3,
+                
+        //         csrfmiddlewaretoken: '{{ csrf_token }}',
+        //     },
+        //     success: function(data) {
+        //         var dataa=data;
+        //       alert("Profile Created Successfully");
+        //       console.log(dataa.name);
+        //     }
+        // });
+    }
+</script>
+</html>

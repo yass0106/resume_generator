@@ -1,0 +1,196 @@
+{% extends 'index.html' %}
+{% block content %}
+<style>
+    #task_details div{
+        margin: 10px;
+        border: solid rgb(39, 39, 39) 1px;
+        border-radius: 10px;
+        padding: 40px 10px 20px 10px;
+       
+    }
+    input,textarea{
+        background-color:rgb(245 119 105 / 62%);
+        border: none;
+        padding: 23px;
+        border-radius: 10px;
+    }
+    /* --------------------------------- */
+    .dropdown{
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content{
+	text-align: center;
+  display: none;
+  position: absolute;
+  /* background-color: #f1f1f1; */
+  /* margin-right: 150px; */
+
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: -1;
+}
+
+.dropdown-content {
+	/* background-color: rgba(236, 81, 54, 0.274); */
+  color: rgb(7, 7, 7);
+  padding: 12px 9px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content li:hover {background-color: #f7cccc;color: #000000;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.container{
+    margin-left: 20px;
+    margin-right: 10px;
+}
+li{
+    margin-bottom: 5px;
+}
+</style>
+
+<br>    
+<div class="col-md-12"> 
+    <P id="too">T O D O ___ T A S K</P><hr>
+    
+</div>
+<br><br>
+<div class="container">
+
+<div class="row" style="text-align: center;">
+    <div class="col-md-3">
+        <h5>Add_New_Task</h5>
+    </div>
+    <div class="col-md-1"></div>
+    <!-- <div class="col-md-8">
+        <h5>Task_Details</h5>
+    </div> -->
+    <div class="col-md-1">
+       <h5> History</h5>
+    </div>
+</div><br>
+<div class="row" style="text-align: left;">
+    <div class="col-md-3">
+         <div class="row">
+            <label for="topic">Topic :</label>
+            <input type="text" name="topic" id="topic">
+           
+        </div> <br>
+        <div class="row">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description" cols="30" rows="10" ></textarea>
+        </div> <br>
+        <div class="row">
+            <label for="date">Select Task Deadline Date:</label>
+            <input type="date" name="date" id="date" placeholder="Enter Deadline Date">
+        </div><br>
+        <div class="row">
+             <button class="btn btn-secondary" onclick="addTask()">Add Task</button>
+        </div>
+        <!-- <div class="row">
+            <button class="btn btn-primary" onclick="show()">show</button>
+       </div> -->
+    </div>
+    <div class="col-md-1 dropdown"></div>
+    <div class="col-md-8" id="task_details" style=" overflow-x: hidden;
+    overflow-y: auto;  height:70vh;text-align: center; border-radius: 10px;">
+    
+
+    </div>
+    <!-- <div class="col-md-1 dropdown">
+        <div class="dropdown-content">
+            <ul id="history" >
+
+            </ul>
+        </div>
+    </div>  -->
+</div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<script>
+
+    function addTask(){
+            // topic = $("#topic").val,
+            // description = $("#description").val(),
+            // deadline = $("#date").val();
+            var i=0;
+            var topic= document.getElementById( "topic" ).value;  
+            var description=document.getElementById("description").value;  
+            var deadline=document.getElementById("date").value; 
+            console.log(deadline);
+            if (topic == "" || description == "" || deadline == "") {
+                alert("Please fill all fields");
+            } else{
+                 $.ajax({
+                    url:'/todo/',
+                    method:"POST",
+                    data:{
+                       "topic":topic,
+                      "description":description,
+                      "deadline":deadline,
+                      "index":"",
+                      csrfmiddlewaretoken: '{{ csrf_token }}'
+                    },
+                    success:function(request){
+                        alert('added succesfully')
+                        location.reload()
+    //                     // document.getElementById('task_details').append("<h1>No t added yet.</h1>");
+    //                     console.log(request.length)
+    //                     $('#task_details').empty();
+    //                    for(i=request.length;i>=0;i--){
+    //                     $('#task_details').append("<p>"+i+"</p><div style='background-color: rgb(255, 234, 226);'>"+
+    //                                                         "<p><strong>Topic : "+ request[i-1].tasks + "</strong></p><br><p>"+ request[i-1].desc +"</p><br><p>"+request[i-1].dates +"</p><br>"
+    //                                                 +"</div>");
+    // }
+    }
+    });
+}
+    }
+varj=45
+    // function show(){
+        console.log("------")
+        $("#too").val()
+        $.ajax({
+            url:'/todo/',
+            method:'POST',
+            data:{
+                "index":"all",
+                csrfmiddlewaretoken: '{{ csrf_token }}'
+            },
+            success:function(data){
+                console.log(data);
+                for(i=data.length;i>0;i--){
+                        $('#task_details').append("<div><p>"+i+"</p><div style='background-color:rgb(245 119 105 / 62%)'; >"+
+                                                            "<p><strong>Topic : "+ data[i-1].tasks + "</strong></p><br><p>"+ data[i-1].desc +"</p><br><p><strong>DeadLine : </strong>"+data[i-1].dates +
+                                                                "</p><br><button class='btn btn-success' onclick='com("+data[i-1].id+")'>Completed & Delete"
+                                                    +"</button><br></div></div>");
+                        $('#history').append("<li>"+ data[i-1].tasks +"</li>")
+            }
+        }
+        })
+// }
+var arraya=[]
+function com(a){
+    console.log(a)
+    // arraya.push(a)
+    // console.log(arraya)
+    $.ajax({
+        url:"/todo/",
+        method:'POST',
+        data:{
+            'index':'delete',
+            'delete':a,
+            'csrfmiddlewaretoken':'{{ csrf_token }}'
+        },
+        success:function(update){
+            location.reload()
+            alert('Updated Succesfully')
+        }
+    })
+}
+</script>
+{% endblock %}

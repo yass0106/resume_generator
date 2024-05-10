@@ -1,0 +1,89 @@
+{% extends  'index.html' %}
+{% block content %}   
+    <br>    
+    <div class="col-md-12"> 
+        <P>R E S U M E ___ T E M P L A T E S</P><hr>
+    </div>
+    
+    <div style=" overflow-x: hidden;
+    overflow-y: auto;  height:75vh;">
+        <div class="row">
+            <div class="col-md-4 picc" style="text-align: center;">
+                <a href="{% url 'resumeM1' %}"><img src="/media/restemplate(1).jpg" alt="sample_ template1" width="200px" height="300px"></a>
+                <br><br>
+                <!-- <a href="{% url 'resumeM1' %}"><button class="btn btn-success">Print</button></a> -->
+            </div><br>
+
+            <div class="col-md-4 picc" style="text-align: center;">
+                <a href="{% url 'resumeM2' %}"><img src="/media/restemp2.jpg" alt="sample_ template1" width="200px" height="300px"></a>
+                <br><br>
+                <!-- <a href="{% url 'resumeM2' %}"><button class="btn btn-success">Print</button></a> -->
+            </div><br>
+
+            <div class="col-md-4 picc" style="text-align: center;">
+                <a href="{% url 'resumeM3' %}"><img src="/media/restemp3.jpg" alt="sample_ template1" width="200px" height="300px"></a>
+                <br><br>
+                <!-- <a href="{% url 'resumeM3' %}"><button class="btn btn-success">Print</button></a> -->
+            </div><br>
+            <div class="row"><p></p></div>
+            <div class="col-md-4 picc" style="text-align: center;">
+                <a href="{% url 'resumeM4' %}"><img src="/media/restemp4.png" alt="sample_ template1" width="300px" height="300px"></a>
+                <br><br>
+                <!-- <a href="{% url 'resumeM4' %}"><button class="btn btn-success">Print</button></a> -->
+            </div><br>
+        </div>
+    </div>
+<!-- <script>
+     function printt(){
+        console.log('----------------------')
+        // $('#hid').replaceClass('container-fluid p-0 d-flex h-100','container-fluid p-0 h-100');
+        
+        document.getElementById('hid').style.display='none';
+        document.getElementById('pri').style.display='block';
+        
+        $.ajax({
+          url: "/restemp/",
+          type:"POST",
+          data:{
+            //   "name":$("#search").val(),
+              csrfmiddlewaretoken: '{{ csrf_token }}',
+          },
+          success:function(response){
+            // alert("iiiiiii");
+            d=response;
+              console.log(response['name'])
+            //    $("#resabout").html("About Me : "+ response['ab']+"<br/>");
+        document.getElementById('resname').innerText=d['name'].toUpperCase();
+        document.getElementById('resemail').innerText=d['email'];
+        document.getElementById("respone").innerText= d['pno'];
+        document.getElementById("resloc").innerText= d['address']; 
+        document.getElementById('reslink').innerText=d['linkedin'];
+        document.getElementById("resskillone").innerText= d['skills1'];document.getElementById('resskill2').innerText=d['skills2'];
+        document.getElementById("resskill3").innerText= d['skills3'];document.getElementById('resskill4').innerText=d['skills4'];
+        document.getElementById("resskill5").innerText= d['skills5'];document.getElementById('reslangone').innerText=d['langknown1'];
+        document.getElementById("reslang2").innerText= d['langknown2'];document.getElementById('reslang3').innerText=d['langknown3'];
+        document.getElementById("areaofinone").innerText= d['Interest1'];
+        document.getElementById('areaofin2').innerText=d['Interest2'];
+        document.getElementById("areaofin3").innerText= d['Interest3'];
+        document.getElementById('areaofin4').innerText=d['Interest4'];document.getElementById('rescgpa').innerText=d['cgpa'];
+        document.getElementById("resabt").innerText= d['about'];document.getElementById('rescollege').innerText=d['College'];document.getElementById('rescyear').innerText=d['year'];
+        document.getElementById("resdepp").innerText= d['degree'].toUpperCase();
+        document.getElementById('reshscyear').innerText=d['hscyear'];
+        document.getElementById('reshsc').innerText=d['hsc'];
+        document.getElementById("twothmart").innerText=d['hscm'];
+        document.getElementById('ressslc').innerText=d['sslc'];
+        document.getElementById("ressslcyear").innerText= d['sslcyear'];
+        document.getElementById('10thmark').innerText=d['sslcm'];
+        document.getElementById('resprotitleone').innerText=d['projecttitle1'].toUpperCase();document.getElementById("prodescone").innerText= d['projectdescription1'];
+        document.getElementById('resprotitle2').innerText=d['ProjectTitle2'].toUpperCase();document.getElementById("prodesc2").innerText= d['projectdescription2'];
+        document.getElementById("resachione").innerText= d['AchievementType1'];document.getElementById('resachi2').innerText=d['AchievementType2'];
+        document.getElementById("resachi3").innerText= d['AchievementType3'];
+          }
+          });
+          now()
+    }
+function now(){
+    window.print();
+}
+</script> -->
+{% endblock %}

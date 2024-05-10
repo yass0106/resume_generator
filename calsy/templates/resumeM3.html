@@ -1,0 +1,174 @@
+{% extends 'index.html' %}
+{% block content %}
+<style>
+    .align{
+        padding-left: 30px;
+    }
+</style>
+<br>
+    <div class="row" id="btnhidden">
+        <div class="col-md-6">
+            <a href="{% url 'restemp' %}"><button class="btn btn-secondary">
+                < Preview
+            </button></a>
+        </div>
+        <div class="col-md-5" style="text-align: right;">
+            <button class="btn btn-danger" onclick="fetch()"> Fetch Details</button>
+            <button class="btn btn-success" onclick="printt()">
+                Print
+            </button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <br>
+            <div class="container">
+                <div class="row" style="background-color: rgba(7, 7, 7, 0.863); color: white; padding: 20px; ">
+                    <div class="col-md-4">
+                        <!-- <div class="imagediv">
+                            <img src="/media/pexels-mohamed-abdelghaffar-771742.jpg" height="180px" alt="Profile Image"/>
+                        </div> -->
+                    </div>
+                    <!-- <div class="col-md-1" ></div> -->
+                    <div class="col-md-8" >
+                        <div class="namediv" >
+                        <h1 id="resname">YOUR NAME..</h1>
+                        <h4 id="resdep">DEPARTMENT NAME</h4>
+                        </div>
+                    </div>
+                </div><br> 
+                <div class="row">
+                    <div class="col-md-4" style="border-right:solid black 1px;" >
+                       <div class="contactDetail" >
+                            <h4 style="background-color: rgba(7, 7, 7, 0.863); color: white; width: 70%; padding: 5px; border-radius: 5px;">Contact Details:</h4>
+                            <p>Email Address: <br><span id="resemail">111111111111</span></p>
+                            <p>Phone Number:  <br><span id="respone">111111111</span></p>
+                            <p>location:  <br><span id="resloc">Lorem ipsum dolor sit amet consectetur.</span></p>
+                            <p>linked in:  <br><span id="reslink">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</span></p>
+                        </div><br><br>
+                        <div class="skillsdiv">
+                            <h4 style="background-color: rgba(7, 7, 7, 0.863); color: white; width: 70%; padding: 5px; border-radius: 5px;">Skills:</h4>
+                            <ul id="resskills">
+                                <li ><h6 id="resskillone">skills</h6></li>
+                                <li ><h6 id="resskill2">skills</h6></li>
+                                <li ><h6 id="resskill3">skills</h6></li>
+                                <li ><h6 id="resskill4">skills</h6></li>
+                                <li ><h6 id="resskill5">skills</h6></li>
+                            </ul>
+                        </div><br><br>
+                        <div class="languagediv">
+                            <h4 style="background-color: rgba(7, 7, 7, 0.863); color: white; width: 70%; padding: 5px; border-radius: 5px;">Languages:</h4>
+                            <ul id="reslang">
+                                    <li ><h6 id="reslangone">LanguagesKnownone</h6></li>
+                                    <li ><h6 id="reslang2">LanguagesKnown2</h6></li>
+                                    <li ><h6 id="reslang3">LanguagesKnown3</h6></li>
+                            </ul>
+                        </div><br><br>
+                        <div class="areaofintrest">
+                            <h4 style="background-color: rgba(7, 7, 7, 0.863); color: white; width: 70%; padding: 5px; border-radius: 5px;">Area of Interest:</h4>
+                            <ul>
+                                <li ><h6 id="areaofinone">area of intrest</h6></li>
+                                <li ><h6 id="areaofin2">area of intrest</h6></li>
+                                <li ><h6 id="areaofin3">area of intrest</h6></li>
+                                <li ><h6 id="areaofin4">area of intrest</h6></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <div class="col-md-1" ></div> -->
+                    <div class="col-md-8 align" >
+                         <div id="resabout" >
+                            <h4 style="background-color: rgba(7, 7, 7, 0.863); color: white; width: 70%; padding: 5px;  border-radius: 5px;">About Me:</h4>
+                            <p id="resabt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque quibusdam officia, iste nulla expedita voluptate delectus eos iusto facilis dolorum explicabo suscipit quaerat illum eius eum possimus libero? Quas optio quibusdam officiis dolore dolorem nam ab itaque obcaecati cum odit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, maxime.</p>
+                        </div><br>
+                        <div class="resedu">
+                            <h4 style="background-color: rgba(7, 7, 7, 0.863); color: white; width: 70%; padding: 5px;  border-radius: 5px;">Education Details:</h4>
+                            <h5 id="resdepp">college/department</h5>
+                            <div style="display: flex;">
+                            <P id="rescollege">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, ut!</P><P>--</P><P id="rescyear">Lorem ipsum dolor sit amet </P>
+                            </div>
+                            <p style="font-weight: bold;" id="rescgpa"><span>|</span>52.36</p>
+                            <!-- <br> -->
+                            <h5>HSC </h5><div style="display: flex;">
+                            <P id="reshsc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, ut!</P><P>--</P><P id="reshscyear">Lorem ipsum dolor sit amet </P>
+                        </div>
+                            <p style="font-weight: bold;"id="twothmart">| 788</p>
+                            <!-- <br> -->
+                            <h5>SSLC </h5>
+                            <div style="display: flex;">
+                            <P id="ressslc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit, ut!</P><P>--</P><P id="ressslcyear">Lorem ipsum dolor sit amet </P></div>
+                            <p style="font-weight: bold;"id="10thmark">| 456</p>
+                        </div><br>
+                        <div class="resproject" >
+                            <h4 style="background-color: rgba(7, 7, 7, 0.863); color: white; width: 70%; padding: 5px;  border-radius: 5px;">Project Title:</h4>
+                            <h6 style="font-weight: bold;"id="resprotitleone">Project Title Here</h5>
+                            <p id="prodescone">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius tempora culpa minus ea veniam in ab nostrum vel impedit. Explicabo magnam eius voluptate accusamus qui blanditiis nemo natus non sint?</p>
+                            <h6 style="font-weight: bold;" id="resprotitle2">Project Title Here</h5>
+                            <p id="prodesc2">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eius tempora culpa minus ea veniam in ab nostrum vel impedit. Explicabo magnam eius voluptate accusamus qui blanditiis nemo natus non sint?</p>
+                        </div><br>
+                        <div class="resachiv" style="padding-bottom: 50px;">
+                            <h4 style="background-color: rgba(7, 7, 7, 0.863); color: white; width: 70%; padding: 5px;  border-radius: 5px;">Achievements:</h4>
+                          
+                            <P id="resachione">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illum molestias asperiores.</P>
+                            <P id="resachi2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illum molestias asperiores.</P>
+                            <P id="resachi3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam illum molestias asperiores.</P>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+    function printt(){
+       document.getElementById('printhide').style.display='none';
+       document.getElementById('head').style.display='none';
+       document.getElementById('btnhidden').style.display='none';
+      
+       window.print();
+       document.getElementById('printhide').style.display='block';
+       document.getElementById('head').style.display='block';
+       document.getElementById('btnhidden').style.display='flex';
+    }
+
+    function fetch(){
+        $.ajax({
+          url: "/restemp/",
+          type:"POST",
+          data:{
+            //   "name":$("#search").val(),
+              csrfmiddlewaretoken: '{{ csrf_token }}',
+          },
+          success:function(response){
+            // alert("iiiiiii");
+            d=response;
+              console.log(response['name'])
+            //    $("#resabout").html("About Me : "+ response['ab']+"<br/>");
+        document.getElementById('resname').innerText=d['name'].toUpperCase();
+        document.getElementById('resemail').innerText=d['email'];
+        document.getElementById("respone").innerText= d['pno'];
+        document.getElementById("resloc").innerText= d['address']; 
+        document.getElementById('reslink').innerText=d['linkedin'];
+        document.getElementById("resskillone").innerText= d['skills1'];document.getElementById('resskill2').innerText=d['skills2'];
+        document.getElementById("resskill3").innerText= d['skills3'];document.getElementById('resskill4').innerText=d['skills4'];
+        document.getElementById("resskill5").innerText= d['skills5'];document.getElementById('reslangone').innerText=d['langknown1'];
+        document.getElementById("reslang2").innerText= d['langknown2'];document.getElementById('reslang3').innerText=d['langknown3'];
+        document.getElementById("areaofinone").innerText= d['Interest1'];
+        document.getElementById('areaofin2').innerText=d['Interest2'];
+        document.getElementById("areaofin3").innerText= d['Interest3'];
+        document.getElementById('areaofin4').innerText=d['Interest4'];document.getElementById('rescgpa').innerText=d['cgpa'];
+        document.getElementById("resabt").innerText= d['about'];document.getElementById('rescollege').innerText=d['College'];document.getElementById('rescyear').innerText=d['year'];
+        document.getElementById("resdepp").innerText= d['degree'].toUpperCase();document.getElementById("resdep").innerText= d['degree'].toUpperCase();
+        document.getElementById('reshscyear').innerText=d['hscyear'];
+        document.getElementById('reshsc').innerText=d['hsc'];
+        document.getElementById("twothmart").innerText=d['hscm'];
+        document.getElementById('ressslc').innerText=d['sslc'];
+        document.getElementById("ressslcyear").innerText= d['sslcyear'];
+        document.getElementById('10thmark').innerText=d['sslcm'];
+        document.getElementById('resprotitleone').innerText=d['projecttitle1'].toUpperCase();document.getElementById("prodescone").innerText= d['projectdescription1'];
+        document.getElementById('resprotitle2').innerText=d['ProjectTitle2'].toUpperCase();document.getElementById("prodesc2").innerText= d['projectdescription2'];
+        document.getElementById("resachione").innerText= d['AchievementType1'];document.getElementById('resachi2').innerText=d['AchievementType2'];
+        document.getElementById("resachi3").innerText= d['AchievementType3'];
+          }
+          });
+    }
+</script>
+{% endblock %}
